@@ -11,7 +11,17 @@ public class Edge{
         this.input = in;
     }
 
-    public Tuple2<Vertex,Integer> get_inputs(){
-      
+    public void get_input(){
+        this.input.rm_tokens(this.weight);
+    }
+
+    public void get_output(){
+        this.output.add_tokens(this.weight);
+    }
+
+    public String toString(){
+        String w = String.valueOf(this.weight);
+        String 
+        return res
     }
 }

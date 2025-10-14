@@ -1,10 +1,12 @@
 public class Place extends Vertex {
     private int tokens;
     private boolean is_empty;
-    public Place(int tokens){
+
+    public Place(Integer tokens){
         super();
         this.tokens = tokens;
     }
+
     public void rm_tokens(int weight){
         this.tokens -= weight;
     }
