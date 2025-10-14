@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 Interface Petri_Network{
+    update_transition_fireable();
     fire_transitions(Transition);
     add_place(Place);
     rm_place(Place);
@@ -24,5 +25,13 @@ public class Network implements Petri_Network{
         this.transitions = transitions;
         this.transitions_fireable = transitions_fireable;
     }
+    public update_transition_fireable(){
+        for (Transition t : transitions) {
+            if (t.is_fireable){
+                transitions_fireable.add(t);
+            } 
+        }
+    }
 
+    
 }
