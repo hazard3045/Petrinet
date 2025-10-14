@@ -12,10 +12,11 @@ public class Place extends Vertex {
     }
 
     public void add_tokens(int weight){
-        tokens += weight;
+        this.tokens += weight;
     }
 
     public void empty(){
-        tokens = 0;
+        this.tokens = 0;
     }
 }
+
