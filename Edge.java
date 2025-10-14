@@ -1,5 +1,4 @@
 
-
 public class Edge{
     private Integer weight;
     private Vertex output;
@@ -11,17 +10,17 @@ public class Edge{
         this.input = in;
     }
 
-    public void get_input(){
+    public void mod_input(){
         if (this.input instanceof Place){
             Place in = (Place) this.input; 
             in.rm_tokens(this.weight);
         }
     }
 
-    public void get_output(){
+    public void mod_output(){
         if (this.output instanceof Place){
             Place out = (Place) this.output; 
-            out.rm_tokens(this.weight);
+            out.add_tokens(this.weight);
         }
     }
 
@@ -36,6 +35,16 @@ public class Edge{
         }
         else { return true; }
     }
+
+    public Vertex get_input(){
+        return this.input;
+    }
+
+    public Vertex get_output() {
+        return output;
+    }
+
+    
 
     // public String toString(){
     //     String w = String.valueOf(this.weight);

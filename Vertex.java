@@ -6,5 +6,9 @@ public class Vertex {
     public Vertex(){
         this.connexions = new ArrayList<Edge>();
     }
+
+    public ArrayList<Edge> get_connexions(){
+        return this.connexions;
+    }
     
 }

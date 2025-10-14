@@ -9,6 +9,9 @@ public class Place extends Vertex {
 
     public void rm_tokens(int weight){
         this.tokens -= weight;
+        if (this.tokens == 0){
+            this.is_empty = true;
+        }
     }
 
     public void add_tokens(int weight){
@@ -19,8 +22,13 @@ public class Place extends Vertex {
         return this.tokens;
     }
 
+    public boolean get_is_empty(){
+        return this.is_empty;
+    }
+
     public void empty(){
         this.tokens = 0;
+        this.is_empty = true;
     }
 }
 
