@@ -6,4 +6,5 @@ public class Vertex {
     public Vertex(){
         this.connexions = new ArrayList<Edge>();
     }
+    
 }

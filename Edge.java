@@ -12,16 +12,23 @@ public class Edge{
     }
 
     public void get_input(){
-        this.input.rm_tokens(this.weight);
+        if (this.input instanceof Place){
+            Place in = (Place) this.input; 
+            in.rm_tokens(this.weight);
+        }
     }
 
     public void get_output(){
-        this.output.add_tokens(this.weight);
+        if (this.output instanceof Place){
+            Place out = (Place) this.output; 
+            out.rm_tokens(this.weight);
+        }
     }
 
-    public String toString(){
-        String w = String.valueOf(this.weight);
-        String 
-        return res
-    }
+    // public String toString(){
+    //     String w = String.valueOf(this.weight);
+    //     String in = this.input.toString();
+    //     String out = this.output.toString();
+    //     return "Cet arc a un poids de "+w+"et est relié à "+in+" et "+out;
+    // }
 }
