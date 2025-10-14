@@ -2,15 +2,15 @@ public class Place extends Vertex {
     private int tokens;
     private boolean is_empty;
 
-    public rm_tokens(int weight){
+    public void rm_tokens(int weight){
         tokens -= weight;
     }
 
-    public add_tokens(int weight){
+    public void add_tokens(int weight){
         tokens += weight;
     }
 
-    public empty(){
+    public void empty(){
         tokens = 0;
     }
 }
