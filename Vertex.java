@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+
 public class Vertex {
-    private Edge[] connexions;
+    private ArrayList<Edge> connexions;
+
+    public Vertex(){
+        this.connexions = new ArrayList<Edge>();
+    }
 }
