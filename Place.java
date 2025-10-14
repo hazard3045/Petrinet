@@ -15,6 +15,10 @@ public class Place extends Vertex {
         this.tokens += weight;
     }
 
+    public Integer get_tokens(){
+        return this.tokens;
+    }
+
     public void empty(){
         this.tokens = 0;
     }

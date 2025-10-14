@@ -1,0 +1,15 @@
+public class Edge_0 extends Edge{
+    private Transition output;
+    private Place input;
+
+    public Edge_0 (int w,Place in, Transition out){
+        super(w,in,out);
+        this.input = in;
+        this.output = out;
+    }
+
+    @Override
+    public void get_input(){
+        
+    }
+}

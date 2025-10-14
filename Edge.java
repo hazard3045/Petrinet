@@ -25,6 +25,18 @@ public class Edge{
         }
     }
 
+    public boolean is_fireable(){
+        if (this.input instanceof Place){
+            Place in = (Place) this.input;
+            Integer tokens = in.get_tokens();
+            if (tokens >= this.weight){
+                return true;
+            }
+            else { return false;}
+        }
+        else { return true; }
+    }
+
     // public String toString(){
     //     String w = String.valueOf(this.weight);
     //     String in = this.input.toString();
