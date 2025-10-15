@@ -36,12 +36,8 @@ public class Edge{
         else { return true; }
     }
 
-    public Vertex get_input(){
-        return this.input;
-    }
-
-    public Vertex get_output() {
-        return output;
+    public boolean is_output(Vertex v) {
+        return v==this.output;
     }
 
     

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Transition extends Vertex{
     private boolean is_fireable;
 
@@ -9,12 +11,14 @@ public class Transition extends Vertex{
 
     public void fire(){
         if (this.is_fireable){
-            for (int i=0;i<this.get_connexions().size();i++){
-                if(this.get_connexions().get(i).get_output() == this ){
-                    this.get_connexions().get(i).mod_input();
+            ArrayList<Edge> connexions = this.get_connexions();
+            for (int i=0;i<connexions.size();i++){
+                Edge edge = connexions.get(i);
+                if(edge.is_output(this) ){
+                    edge.mod_input();
                 }
                 else {
-                    this.get_connexions().get(i).mod_output();
+                    edge.mod_output();
                 }
             }
         }
@@ -24,9 +28,11 @@ public class Transition extends Vertex{
     }
 
     public boolean is_fireable(){
-        for (int i=0;i<this.get_connexions().size();i++){
-            if (this.get_connexions().get(i).get_output() == this){
-                if (!this.get_connexions().get(i).is_fireable()){
+        ArrayList<Edge> connexions = this.get_connexions();
+        for (int i=0;i<connexions.size();i++){
+            Edge edge = connexions.get(i);
+            if (edge.is_output(this)){
+                if (!edge.is_fireable()){
                     return false;
                 }
             }
