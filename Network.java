@@ -1,37 +1,68 @@
 import java.util.ArrayList;
 
-Interface Petri_Network{
-    update_transition_fireable();
-    fire_transitions(Transition);
-    add_place(Place);
-    rm_place(Place);
-    add_transition(Transition);
-    rm_transition(Transition);
-    add_edge(Edge);
-    rm_edge(Edge);
-    change_edge(Edge,w,in,out);
-    change_token(Place,int);
-}
-
 public class Network implements Petri_Network{
-    private ArrayList<place> places;
+    private ArrayList<Place> places;
     private ArrayList<Edge> edges;
     private ArrayList<Transition> transitions;
     private ArrayList<Transition> transitions_fireable;
 
     public Network(){
-        this.places = places;
-        this.edges = edges;
-        this.transitions = transitions;
-        this.transitions_fireable = transitions_fireable;
+        this.places = new ArrayList<Place>();
+        this.edges = new ArrayList<Edge>();
+        this.transitions = new ArrayList<Transition>();
+        this.transitions_fireable = new ArrayList<Transition>();
     }
-    public update_transition_fireable(){
-        for (Transition t : transitions) {
-            if (t.is_fireable){
-                transitions_fireable.add(t);
-            } 
-        }
+
+    public void add_edge(Edge T) {
+        // TODO Auto-generated method stub
+        
     }
+
+    public void add_place(Place p) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void add_transition(Transition T) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void change_edge(Edge e, Integer w, Vertex in, Vertex out) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void change_token(Place p, Integer nb) {
+        // TODO Auto-generated method stub
+        
+    }
+  
+    public void fire_transitions(Transition T) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void rm_edge(Edge T) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void rm_place(Place p) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void rm_transition(Transition T) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+    public void update_transition_fireable(){
+    }
+
+    public void fire_transitions(){}
 
     
 }
