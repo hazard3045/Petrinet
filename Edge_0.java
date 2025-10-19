@@ -8,6 +8,11 @@ public class Edge_0 extends Edge{
         this.output = out;
     }
 
+    public static Edge_0 create_edge(Vertex out,Vertex in){
+        Edge_0 e = new Edge_0 ((Place) in,(Transition) out);
+        return e;
+    }
+
     @Override
     public boolean is_fireable(){
         return this.input.get_is_empty();

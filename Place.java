@@ -7,6 +7,11 @@ public class Place extends Vertex {
         this.tokens = tokens;
     }
 
+    public static Place create_place(Integer tokens){
+        Place p = new Place(tokens);
+        return p;
+    }
+
     public void rm_tokens(int weight){
         this.tokens -= weight;
         if (this.tokens == 0){

@@ -10,5 +10,9 @@ public class Vertex {
     public ArrayList<Edge> get_connexions(){
         return this.connexions;
     }
+
+    public void add_connexion(Edge e){
+        this.connexions.add(e);
+    }
     
 }

@@ -10,6 +10,11 @@ public class Edge{
         this.input = in;
     }
 
+    public static Edge create_edge(Integer w,Vertex out,Vertex in){
+        Edge e = new Edge (w,out,in);
+        return e;
+    }
+
     public void mod_input(){
         if (this.input instanceof Place){
             Place in = (Place) this.input; 

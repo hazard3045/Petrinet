@@ -3,9 +3,14 @@ import java.util.ArrayList;
 public class Transition extends Vertex{
     private boolean is_fireable;
 
-    public Transition(boolean is_fireable){
+    public Transition(){
         super();
-        this.is_fireable = is_fireable;
+        this.is_fireable = false;
+    }
+
+    public static Transition create_transition(){
+        Transition t = new Transition();
+        return t;
     }
     
 
