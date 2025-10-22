@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Edge{
     private Integer weight;
@@ -43,6 +44,23 @@ public class Edge{
 
     public boolean is_output(Vertex v) {
         return v==this.output;
+    }
+
+    public void self_destruct(){
+        ArrayList<Edge> conn_in = this.input.get_connexions();
+        for (int i=0;i<conn_in.size();i++){
+            Edge e = conn_in.get(i);
+            if (e==this){
+                conn_in.remove(i);
+            }
+        }
+        ArrayList<Edge> conn_out = this.output.get_connexions();
+        for (int i=0;i<conn_out.size();i++){
+            Edge e = conn_out.get(i);
+            if (e==this){
+                conn_out.remove(i);
+            }
+        }
     }
 
     

@@ -45,69 +45,74 @@ public class Network implements Petri_Network{
     }
 
     public void change_edge(Edge e, Integer w, Vertex in, Vertex out) {
-        // TODO Auto-generated method stub
-        
+        this.rm_edge(e);
+        this.add_edge(in, out, w);
+    }
+
+    public void change_edge_0(Edge e, Vertex in, Vertex out) {
+        this.rm_edge(e);
+        this.add_edge_0(in, out);
+    }
+
+    public void change_edge_drainer(Edge e, Vertex in, Vertex out) {
+        this.rm_edge(e);
+        this.add_edge_drainer(in, out);
     }
 
     public void change_token(Place p, Integer nb) {
-        // TODO Auto-generated method stub
-        
-    }
-  
-    public void fire_transitions(Transition T) {
-        // TODO Auto-generated method stub
+        p.set_tokens(nb);
         
     }
 
     public void rm_edge(Edge T) {
-        // TODO Auto-generated method stub
-        
+        T.self_destruct();
+        ArrayList<Edge> conn = this.edges;
+        conn.remove(T);
+
     }
 
     public void rm_place(Place p) {
-        // TODO Auto-generated method stub
-        
+        ArrayList<Edge> conn = new ArrayList<Edge>(p.get_connexions());
+        for (Edge e:conn){
+            this.rm_edge(e);
+        }
+        this.places.remove(p);
     }
 
     public void rm_transition(Transition T) {
-        // TODO Auto-generated method stub
-        
+        ArrayList<Edge> conn = new ArrayList<Edge>(T.get_connexions());
+        for (Edge e:conn){
+            this.rm_edge(e);
+        }
+        this.transitions.remove(T);
     }
 
+    public void print_fireable_transitions() {
+        System.out.println("Fireable transitions:");
+        for (Transition T:this.transitions_fireable){
+            System.out.println(T.toString());
+        } 
+    }
 
     public void update_transition_fireable(){
+        this.transitions_fireable.clear();
+        for (Transition T:this.transitions){
+            if (T.is_fireable()){
+                this.transitions_fireable.add(T);
+            }
+        }
     }
 
-    public void fire_transitions(){}
-
-    public static void main(String[] args){
-        Network network = new Network();
-
-        // Adding places
-        network.add_place(5);
-        network.add_place(10);
-
-        // Adding transitions
-        network.add_transition();
-        network.add_transition();
-
-        // Creating vertices for edges
-        Place place1 = network.places.get(0);
-        Place place2 = network.places.get(1);
-        Transition transition1 = network.transitions.get(0);
-        Transition transition2 = network.transitions.get(1);
-
-        // Adding edges
-        network.add_edge(place1, transition1, 3);
-        network.add_edge(transition1, place2, 2);
-        network.add_edge_0(place2, transition2);
-        network.add_edge_drainer(place2, transition1);
-
-        // Print to verify
-        System.out.println("Places: " + network.places.size());
-        System.out.println("Transitions: " + network.transitions.size());
-        System.out.println("Edges: " + network.edges.size());
+    public void fire_transitions(Transition T){
+        if (this.transitions_fireable.contains(T)){
+            T.fire();
+        }
     }
+
+    public static void main(String[] args) {
+        
+    }
+    
 
     
 }

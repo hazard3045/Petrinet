@@ -12,6 +12,16 @@ public class Place extends Vertex {
         return p;
     }
 
+    public void set_tokens(int tokens){
+        this.tokens = tokens;
+        if (this.tokens == 0){
+            this.is_empty = true;
+        }
+        else {
+            this.is_empty = false;
+        }
+    }
+
     public void rm_tokens(int weight){
         this.tokens -= weight;
         if (this.tokens == 0){
