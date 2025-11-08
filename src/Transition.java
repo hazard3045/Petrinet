@@ -1,3 +1,4 @@
+package src;
 import java.util.ArrayList;
 
 public class Transition extends Vertex{
@@ -7,12 +8,6 @@ public class Transition extends Vertex{
         super();
         this.is_fireable = false;
     }
-
-    public static Transition create_transition(){
-        Transition t = new Transition();
-        return t;
-    }
-    
 
     public void fire(){
         if (this.is_fireable){
@@ -38,10 +33,12 @@ public class Transition extends Vertex{
             Edge edge = connexions.get(i);
             if (edge.is_output(this)){
                 if (!edge.is_fireable()){
+                    this.is_fireable = false;
                     return false;
                 }
             }
         }
+        this.is_fireable = true;
         return true;
     }
 }

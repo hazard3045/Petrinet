@@ -1,3 +1,4 @@
+package src;
 public class Place extends Vertex {
     private int tokens;
     private boolean is_empty;
@@ -5,21 +6,7 @@ public class Place extends Vertex {
     public Place(Integer tokens){
         super();
         this.tokens = tokens;
-    }
-
-    public static Place create_place(Integer tokens){
-        Place p = new Place(tokens);
-        return p;
-    }
-
-    public void set_tokens(int tokens){
-        this.tokens = tokens;
-        if (this.tokens == 0){
-            this.is_empty = true;
-        }
-        else {
-            this.is_empty = false;
-        }
+        this.is_empty = (tokens == 0);
     }
 
     public void rm_tokens(int weight){
@@ -31,13 +18,14 @@ public class Place extends Vertex {
 
     public void add_tokens(int weight){
         this.tokens += weight;
+        this.is_empty = (this.tokens == 0);
     }
 
     public Integer get_tokens(){
         return this.tokens;
     }
 
-    public boolean get_is_empty(){
+    public boolean isEmpty(){
         return this.is_empty;
     }
 

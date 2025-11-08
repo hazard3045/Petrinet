@@ -1,3 +1,4 @@
+package src;
 import java.util.ArrayList;
 
 public class Edge{
@@ -5,15 +6,10 @@ public class Edge{
     private Vertex output;
     private Vertex input;
 
-    public Edge(int w,Vertex out,Vertex in){
+    public Edge(int w,Vertex in,Vertex out){
         this.weight = w;
-        this.output = out;
         this.input = in;
-    }
-
-    public static Edge create_edge(Integer w,Vertex out,Vertex in){
-        Edge e = new Edge (w,out,in);
-        return e;
+        this.output = out;
     }
 
     public void mod_input(){
@@ -44,6 +40,10 @@ public class Edge{
 
     public boolean is_output(Vertex v) {
         return v==this.output;
+    }
+
+    public Integer get_weight(){
+        return this.weight;
     }
 
     public void self_destruct(){

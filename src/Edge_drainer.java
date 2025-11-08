@@ -1,3 +1,4 @@
+package src;
 public class Edge_drainer extends Edge{
     private Transition output;
     private Place input;
@@ -6,11 +7,6 @@ public class Edge_drainer extends Edge{
         super(0,in,out);
         this.input = in;
         this.output = out;
-    }
-
-    public static Edge_drainer create_edge(Vertex out,Vertex in){
-        Edge_drainer e = new Edge_drainer ((Place) in,(Transition) out);
-        return e;
     }
 
     @Override

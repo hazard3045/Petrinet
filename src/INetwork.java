@@ -1,4 +1,5 @@
-public interface Petri_Network{
+package src;
+public interface INetwork{
     void update_transition_fireable();
     void fire_transitions(Transition T);
     void add_place(Integer nb);
@@ -10,5 +11,6 @@ public interface Petri_Network{
     void add_edge_drainer(Vertex A,Vertex B);
     void rm_edge(Edge T);
     void change_edge(Edge e,Integer w,Vertex in,Vertex out);
-    void change_token(Place p,Integer nb);
+    void add_tokens(Place p,Integer nb);
+    void rm_tokens(Place p,Integer nb);
 }
