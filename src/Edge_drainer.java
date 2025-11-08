@@ -1,3 +1,18 @@
+/**
+ * Represents a drainer edge in a Petri net, connecting a Place (input) to a Transition (output).
+ * This edge type is responsible for emptying the input Place when fired.
+ * 
+ * <p>Key behaviors:
+ * <ul>
+ *   <li>On firing, the input Place is emptied via {@link #modInput()}.</li>
+ *   <li>{@link #isFireable()} returns true if the input Place contains more than one token.</li>
+ *   <li>{@link #modOutput()} is a no-op for this edge type.</li>
+ * </ul>
+ * 
+ * @see Edge
+ * @see Place
+ * @see Transition
+ */
 package src;
 public class Edge_drainer extends Edge{
     private Transition output;
@@ -8,18 +23,18 @@ public class Edge_drainer extends Edge{
         this.input = in;
         this.output = out;
     }
-
+    
     @Override
-    public void mod_input(){
+    public void modInput(){
         this.input.empty();
     }
 
     @Override
-    public void mod_output(){}
+    public void modOutput(){}
 
     @Override
-    public boolean is_fireable(){
-        int tok = this.input.get_tokens();
+    public boolean isFireable(){
+        int tok = this.input.getTokens();
         if (tok > 1){
             return true;
         }

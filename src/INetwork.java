@@ -1,16 +1,16 @@
 package src;
 public interface INetwork{
-    void update_transition_fireable();
-    void fire_transitions(Transition T);
-    void add_place(Integer nb);
-    void rm_place(Place p);
-    void add_transition();
-    void rm_transition(Transition T);
-    void add_edge(Vertex A,Vertex B,Integer w);
-    void add_edge_0(Vertex A,Vertex B);
-    void add_edge_drainer(Vertex A,Vertex B);
-    void rm_edge(Edge T);
-    void change_edge(Edge e,Integer w,Vertex in,Vertex out);
-    void add_tokens(Place p,Integer nb);
-    void rm_tokens(Place p,Integer nb);
+    void updateTransitionFireable();
+    void fireTransitions(Transition T);
+    void addPlace(Integer nb);
+    void rmPlace(Place p);
+    void addTransition();
+    void rmTransition(Transition T);
+    void addEdge(Vertex A,Vertex B,Integer w);
+    void addEdge_0(Vertex A,Vertex B);
+    void addEdgeDrainer(Vertex A,Vertex B);
+    void rmEdge(Edge T);
+    void changeEdge(Edge e,Integer w,Vertex in,Vertex out);
+    void addTokens(Place p,Integer nb);
+    void rmTokens(Place p,Integer nb);
 }

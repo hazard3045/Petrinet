@@ -1,3 +1,16 @@
+/**
+ * Represents an edge of type 0 in a Petri net, connecting a Place (input) to a Transition (output).
+ * This edge type is fireable only when the input Place is empty.
+ * 
+ * <p>
+ * The {@code Edge_0} class extends the {@link Edge} class and overrides its methods to define
+ * the specific behavior for this edge type.
+ * </p>
+ *
+ * @see Edge
+ * @see Place
+ * @see Transition
+ */
 package src;
 public class Edge_0 extends Edge{
     private Transition output;
@@ -10,14 +23,14 @@ public class Edge_0 extends Edge{
     }
 
     @Override
-    public boolean is_fireable(){
+    public boolean isFireable(){
         return this.input.isEmpty();
     }
 
     @Override
-    public void mod_input(){}
+    public void modInput(){}
 
     @Override
-    public void mod_output(){}
+    public void modOutput(){}
 
 }
