@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import src.*;
 
 public class TestRM1 {
     

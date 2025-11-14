@@ -1,3 +1,5 @@
+import src.*;
+
 public class TestCreationReseau {
     
     public static void main(String[] args) {

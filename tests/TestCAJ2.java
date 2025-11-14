@@ -1,3 +1,5 @@
+import src.*;
+
 public class TestCAJ2 {
     
     public static void main(String[] args) {

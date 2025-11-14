@@ -1,3 +1,5 @@
+import src.*;
+
 public class TestCA3 {
     
     public static void main(String[] args) {
