@@ -12,15 +12,15 @@ public class TestCA0 {
         System.out.println("Test CA0 - Créer arc avec poids positif");
         try {
             Network network = new Network();
-            network.add_place(3);
-            network.add_transition();
+            network.addPlace(3);
+            network.addTransition();
             
             // Récupération des éléments (méthode simplifiée pour les tests)
-            Place place = Place.create_place(3);
-            Transition transition = Transition.create_transition();
+            Place place = new Place(3);
+            Transition transition = new Transition();
             
             // Création d'un arc avec poids positif
-            network.add_edge(place, transition, 2);
+            network.addEdge(place, transition, 2);
             
             System.out.println("PASS: Arc créé avec succès entre place et transition");
             

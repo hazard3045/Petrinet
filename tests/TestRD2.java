@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import src.*;
 
 public class TestRD2 {
@@ -15,23 +15,24 @@ public class TestRD2 {
             Network network = new Network();
             
             // État initial: Une transition, un arc sortant de poids 2, une place vide
-            Place place = Place.create_place(0);
-            Transition transition = Transition.create_transition();
+            Place place = new Place(0);
+            Transition transition = new Transition();
             
             // Arc sortant: transition → place avec poids 2
-            network.add_edge(transition, place, 2);
+            network.addEdge(transition, place, 2);
             
-            System.out.println("État initial - Place: " + place.get_tokens() + " jetons");
+            System.out.println("État initial - Place: " + place.getTokens() + " jetons");
             
             // Tirer la transition
+            transition.isFireable();
             transition.fire();
             
-            System.out.println("Après tir - Place: " + place.get_tokens() + " jetons");
+            System.out.println("Après tir - Place: " + place.getTokens() + " jetons");
             
-            if (place.get_tokens() == 2) {
+            if (place.getTokens() == 2) {
                 System.out.println("PASS: La place contient maintenant 2 jetons");
             } else {
-                System.out.println("FAIL: Nombre de jetons incorrect. Attendu: 2, Obtenu: " + place.get_tokens());
+                System.out.println("FAIL: Nombre de jetons incorrect. Attendu: 2, Obtenu: " + place.getTokens());
             }
             
         } catch (Exception e) {

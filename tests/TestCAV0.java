@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import src.*;
 
 public class TestCAV0 {
@@ -13,11 +13,11 @@ public class TestCAV0 {
         System.out.println("Test CAV0 - Créer arc videur cas nominal");
         try {
             Network network = new Network();
-            Place place = Place.create_place(5); // Place avec jetons
-            Transition transition = Transition.create_transition();
+            Place place = new Place(5); // Place avec jetons
+            Transition transition = new Transition();
             
             // Création d'un arc videur
-            network.add_edge_drainer(place, transition);
+            network.addEdgeDrainer(place, transition);
             
             System.out.println("PASS: Arc videur créé avec succès entre place et transition");
             

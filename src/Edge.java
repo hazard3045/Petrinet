@@ -33,6 +33,8 @@ public class Edge{
     private Vertex input;
 
     public Edge(int w,Vertex in,Vertex out){
+        assert w >= 0 : "Weight must be non-negative";
+        assert in.getClass() != out.getClass() : "Input and output vertices must be of different types";
         this.weight = w;
         this.input = in;
         this.output = out;

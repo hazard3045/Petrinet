@@ -52,37 +52,23 @@ Tests d'activation du réseau:
 ### RunAllTests.java
 Lanceur principal qui exécute tous les tests dans l'ordre logique et fournit un rapport final.
 
-### run_tests.sh
-Script bash pour compiler et exécuter automatiquement tous les tests.
-
-## Utilisation
-
-### Exécution Automatique
-```bash
-cd tests/
-./run_tests.sh
-```
-
 ### Exécution Manuelle
 
 1. **Compilation:**
 ```bash
-cd /home/pmar/Documents/DCL/MAPD/filrouge/Petrinet
-javac -cp . *.java
-cd tests/
-javac -cp ".." *.java
+javac -d bin src/*.java tests/*.java
 ```
 
 2. **Exécution de tous les tests:**
 ```bash
-java -cp ".." RunAllTests
+java -cp bin RunAllTests
 ```
 
 3. **Exécution de tests individuels:**
 ```bash
-java -cp ".." TestCreationReseau
-java -cp ".." TestArcsSpeciaux  
-java -cp ".." TestActivationReseau
+java -cp bin TestCreationReseau
+java -cp bin TestArcsSpeciaux  
+java -cp bin TestActivationReseau
 ```
 
 ## Résultats Attendus

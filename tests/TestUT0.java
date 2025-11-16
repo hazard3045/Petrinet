@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import src.*;
 
 public class TestUT0 {
@@ -13,20 +13,20 @@ public class TestUT0 {
         System.out.println("Test UT0 - Transitions tirables avec arcs doublés insuffisants");
         try {
             Network network = new Network();
-            network.add_place(3); // Place avec 3 jetons
-            network.add_transition();
+            network.addPlace(3); // Place avec 3 jetons
+            network.addTransition();
             
-            Place place = Place.create_place(3);
-            Transition transition = Transition.create_transition();
+            Place place = new Place(3);
+            Transition transition = new Transition();
             
             // Création d'arcs doublés nécessitant plus de jetons que disponibles
-            network.add_edge(place, transition, 2); // Premier arc poids 2
-            network.add_edge(place, transition, 3); // Second arc poids 3 (total = 5 jetons nécessaires)
+            network.addEdge(place, transition, 2); // Premier arc poids 2
+            network.addEdge(place, transition, 3); // Second arc poids 3 (total = 5 jetons nécessaires)
             
             // Mise à jour des transitions tirables
-            network.update_transition_fireable();
+            network.updateTransitionFireable();
             
-            if (!transition.is_fireable()) {
+            if (!transition.isFireable()) {
                 System.out.println("PASS: Transition correctement identifiée comme non tirable");
                 System.out.println("Jetons disponibles: 3, Jetons nécessaires: 5");
             } else {

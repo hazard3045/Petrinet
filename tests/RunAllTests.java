@@ -1,3 +1,6 @@
+
+import src.*;
+
 /**
  * Lanceur principal pour tous les tests du réseau de Petri
  * Exécute tous les tests selon les spécifications des sections 7.2 et 7.3

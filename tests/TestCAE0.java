@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import src.*;
 
 public class TestCAE0 {
@@ -13,11 +13,11 @@ public class TestCAE0 {
         System.out.println("Test CAE0 - Créer arc zéro cas nominal");
         try {
             Network network = new Network();
-            Place place = Place.create_place(0); // Place vide pour arc zéro
-            Transition transition = Transition.create_transition();
+            Place place = new Place(0); // Place vide pour arc zéro
+            Transition transition = new Transition();
             
             // Création d'un arc zéro
-            network.add_edge_0(place, transition);
+            network.addEdge_0(place, transition);
             
             System.out.println("PASS: Arc zéro créé avec succès entre place et transition");
             

@@ -1,3 +1,4 @@
+
 import src.*;
 
 public class TestCAJ0 {
@@ -11,17 +12,17 @@ public class TestCAJ0 {
     public void testCAJ0() {
         System.out.println("Test CAJ0 - Ajouter jetons avec N négatif");
         try {
-            Place place = Place.create_place(5);
-            int initialTokens = place.get_tokens();
+            Place place = new Place(5);
+            int initialTokens = place.getTokens();
             
             // Tentative d'ajout de jetons négatifs
-            place.add_tokens(-3);
+            place.addTokens(-3);
             
             // Vérifier que les jetons ont été ajoutés même si négatifs (comportement actuel)
             // Le code actuel ne valide pas les valeurs négatives
-            if (place.get_tokens() == initialTokens - 3) {
+            if (place.getTokens() == initialTokens - 3) {
                 System.out.println("ATTENTION: Le code permet l'ajout de jetons négatifs!");
-                System.out.println("Jetons avant: " + initialTokens + ", après: " + place.get_tokens());
+                System.out.println("Jetons avant: " + initialTokens + ", après: " + place.getTokens());
             }
             
         } catch (Exception e) {

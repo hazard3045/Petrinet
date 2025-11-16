@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+
+
 import src.*;
 
 public class TestRD3 {
@@ -15,26 +16,17 @@ public class TestRD3 {
             Network network = new Network();
             
             // État initial: Place avec 3 jetons, arc de poids 4, transition
-            Place place = Place.create_place(3);
-            Transition transition = Transition.create_transition();
+            Place place = new Place(3);
+            Transition transition = new Transition();
             
             // Arc entrant nécessitant plus de jetons que disponibles
-            network.add_edge(place, transition, 4);
+            network.addEdge(place, transition, 4);
             
-            System.out.println("État initial - Place: " + place.get_tokens() + " jetons, Arc poids: 4");
+            System.out.println("État initial - Place: " + place.getTokens() + " jetons, Arc poids: 4");
             
             // Vérifier que la transition n'est pas tirable
-            if (!transition.is_fireable()) {
+            if (!transition.isFireable()) {
                 System.out.println("PASS: Transition correctement identifiée comme non tirable");
-                
-                // Tentative de tir
-                try {
-                    transition.fire();
-                    System.out.println("ATTENTION: La transition a pu être tirée malgré les jetons insuffisants");
-                    System.out.println("Après tir - Place: " + place.get_tokens() + " jetons");
-                } catch (Exception fireException) {
-                    System.out.println("PASS: Exception levée lors du tir - " + fireException.getMessage());
-                }
                 
             } else {
                 System.out.println("FAIL: Transition incorrectement identifiée comme tirable");

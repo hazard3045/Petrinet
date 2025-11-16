@@ -1,3 +1,4 @@
+
 import src.*;
 
 public class TestCA2 {
@@ -12,10 +13,10 @@ public class TestCA2 {
         System.out.println("Test CA2 - Créer arc avec sommet inexistant");
         try {
             Network network = new Network();
-            Place place = Place.create_place(3);
+            Place place = new Place(3);
             
             // Tentative de création d'arc avec transition null
-            network.add_edge(place, null, 2);
+            network.addEdge(place, null, 2);
             
             System.out.println("FAIL: Le code devrait lever une exception avec sommet null");
             

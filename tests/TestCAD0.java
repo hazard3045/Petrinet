@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import src.*;
 
 public class TestCAD0 {
@@ -13,15 +13,15 @@ public class TestCAD0 {
         System.out.println("Test CAD0 - Créer arc doublé simple");
         try {
             Network network = new Network();
-            Place place = Place.create_place(10);
-            Transition transition = Transition.create_transition();
+            Place place = new Place(10);
+            Transition transition = new Transition();
             
             // Création du premier arc simple
-            network.add_edge(place, transition, 2);
+            network.addEdge(place, transition, 2);
             System.out.println("Premier arc créé avec poids 2");
             
             // Création du second arc simple (doublement)
-            network.add_edge(place, transition, 3);
+            network.addEdge(place, transition, 3);
             System.out.println("Second arc créé avec poids 3");
             
             System.out.println("PASS: Arcs doublés créés avec succès");

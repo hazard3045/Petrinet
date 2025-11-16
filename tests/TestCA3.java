@@ -1,3 +1,4 @@
+
 import src.*;
 
 public class TestCA3 {
@@ -12,11 +13,11 @@ public class TestCA3 {
         System.out.println("Test CA3 - Créer arc entre sommets de même type");
         try {
             Network network = new Network();
-            Place place1 = Place.create_place(3);
-            Place place2 = Place.create_place(2);
+            Place place1 = new Place(3);
+            Place place2 = new Place(2);
             
             // Tentative de création d'arc entre deux places
-            network.add_edge(place1, place2, 2);
+            network.addEdge(place1, place2, 2);
             
             System.out.println("ATTENTION: Le code permet la création d'arcs entre sommets de même type");
             
@@ -26,11 +27,11 @@ public class TestCA3 {
         
         try {
             Network network = new Network();
-            Transition t1 = Transition.create_transition();
-            Transition t2 = Transition.create_transition();
+            Transition t1 = new Transition();
+            Transition t2 = new Transition();
             
             // Tentative de création d'arc entre deux transitions
-            network.add_edge(t1, t2, 2);
+            network.addEdge(t1, t2, 2);
             
             System.out.println("ATTENTION: Le code permet la création d'arcs entre transitions");
             

@@ -21,6 +21,8 @@ public class Place extends Vertex {
     }
 
     public void rmTokens(int weight){
+        assert weight >= 0 : "Weight must be non-negative";
+        assert this.tokens >= weight : "Not enough tokens to remove";
         this.tokens -= weight;
         if (this.tokens == 0){
             this.is_empty = true;
@@ -28,6 +30,7 @@ public class Place extends Vertex {
     }
 
     public void addTokens(int weight){
+        assert weight >= 0 : "Weight must be non-negative";
         this.tokens += weight;
         this.is_empty = (this.tokens == 0);
     }

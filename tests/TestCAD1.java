@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import src.*;
 
 public class TestCAD1 {
@@ -13,15 +13,15 @@ public class TestCAD1 {
         System.out.println("Test CAD1 - Créer arc zéro sur arc existant");
         try {
             Network network = new Network();
-            Place place = Place.create_place(5);
-            Transition transition = Transition.create_transition();
+            Place place = new Place(5);
+            Transition transition = new Transition();
             
             // Création d'un arc simple
-            network.add_edge(place, transition, 2);
+            network.addEdge(place, transition, 2);
             System.out.println("Arc simple créé avec poids 2");
             
             // Tentative de création d'arc zéro sur la même connexion
-            network.add_edge_0(place, transition);
+            network.addEdge_0(place, transition);
             
             System.out.println("ATTENTION: Le code permet la création d'arc zéro sur arc existant");
             
